@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 6px solid #ccc;
+    border-top-color: #3498db;
+    animation: spin 1s ease infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

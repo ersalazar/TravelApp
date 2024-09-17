@@ -1,0 +1,30 @@
+
+services:
+  next-app:
+    build:
+      context: ./travel-app-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spring-app
+    environment:
+      - NEXT_PUBLIC_API_URL=http://spring-app:8080
+    networks:
+      - app-network
+
+  spring-app:
+    build:
+      context: ./TravelAppBackend
+      dockerfile: Dockerfile
+    environment:
+      - API_KEY=your_actual_api_key
+      - API_SECRET=your_actual_api_secret
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

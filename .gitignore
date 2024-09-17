@@ -1,0 +1,10 @@
+travel-app-frontend/node_modules/
+travel-app-frontend/.next/
+travel-app-frontend/.env.local
+
+TravelAppBackend/target/
+
+**/*.log
+**/*.tmp
+
+.DS_Store
